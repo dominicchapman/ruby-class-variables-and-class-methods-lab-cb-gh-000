@@ -14,7 +14,7 @@ class Song
 
     @@count += 1
     # can't use unless @@artists.include?(artist) because @@artists should
-    # contain ALL artists of existing songs (including duplicates), but 
+    # contain ALL artists of existing songs (including duplicates), but
     # artists class method should remove duplicates
     @@artists << artist
     @@genres << genre
