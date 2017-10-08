@@ -17,15 +17,15 @@ class Song
     @@genres << genre unless @@genres.include?(genre)
   end
 
-  def count
+  def self.count
     @@count
   end
 
-  def artists
+  def self.artists
     @@artists
   end
 
-  def genres
+  def self.genres
     @@genres
   end
 
