@@ -13,8 +13,10 @@ class Song
     @genre = genre
 
     @@count += 1
-    # can't use unless @@artists.include?(artist) because
-    @@artists << artist unless @@artists.include?(artist)
+    # can't use unless @@artists.include?(artist) because @@artists should
+    # contain ALL artists of existing songs (including duplicates), but 
+    # artists class method should remove duplicates
+    @@artists << artist
     @@genres << genre
   end
 
@@ -23,11 +25,11 @@ class Song
   end
 
   def self.artists
-    @@artists
+    @@artists.uniq
   end
 
   def self.genres
-    @@genres
+    @@genres.uniq
   end
 
   def self.genre_count
